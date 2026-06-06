@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cute-Fish-blog | 个人小站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: url("bg.jpg") no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #e8e8e8;
+        }
+
+        .mask {
+            width: 100%;
+            min-height: 100vh;
+            background-color: rgba(10, 12, 20, 0.55);
+            padding: 40px 20px;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(30, 35, 50, 0.3);
+            /* 浅毛玻璃 */
+            backdrop-filter: blur(6px);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid rgba(180, 190, 220, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 5, 20, 0.35);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .avatar-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid rgba(170, 185, 210, 0.5);
+            box-shadow: 0 0 18px rgba(120, 140, 180, 0.3);
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 28px rgba(120, 140, 180, 0.5);
+        }
+
+        .nickname {
+            font-size: 28px;
+            margin-top: 18px;
+            color: #d0d8e8;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+
+        .sign {
+            font-size: 14px;
+            color: #a8b2cc;
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(160, 175, 200, 0.35), transparent);
+            margin: 35px 0;
+        }
+
+        .intro-title {
+            font-size: 22px;
+            color: #c5cfe2;
+            margin: 30px 0 16px;
+            border-left: 3px solid rgba(130, 150, 190, 0.6);
+            padding-left: 12px;
+            letter-spacing: 2px;
+        }
+
+        .intro-text {
+            line-height: 1.9;
+            font-size: 16px;
+            color: #dcdfe8;
+            text-indent: 2em;
+            margin-bottom: 12px;
+        }
+
+        .tag-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin: 18px 0 22px;
+        }
+
+        .tag {
+            padding: 7px 16px;
+            background: rgba(60, 70, 95, 0.3);
+            border: 1px solid rgba(140, 155, 185, 0.3);
+            border-radius: 4px;
+            font-size: 14px;
+            color: #c8d2e5;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .tag:hover {
+            background: rgba(75, 88, 115, 0.45);
+        }
+
+        .msg-box {
+            background: rgba(40, 48, 68, 0.25);
+            border-radius: 6px;
+            padding: 22px;
+            margin: 22px 0;
+            border: 1px solid rgba(150, 165, 195, 0.25);
+        }
+
+        .msg-text {
+            line-height: 1.9;
+            font-size: 15px;
+            color: #cdd6e6;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 45px;
+            font-size: 14px;
+            color: #99a4bc;
+            padding-top: 20px;
+            border-top: 1px solid rgba(150, 165, 195, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .footer p + p {
+            margin-top: 8px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .blog-container {
+                padding: 25px;
+            }
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            .nickname {
+                font-size: 24px;
+            }
+            .intro-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mask">
+        <div class="blog-container">
+            <!-- 头像 & 昵称 & 签名 -->
+            <div class="avatar-box">
+                <img src="avatar.jpg" alt="头像" class="avatar">
+                <h2 class="nickname">cute-Fish</h2>
+                <p class="sign">人间过客，自在而行</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- 关于我 -->
+            <h3 class="intro-title">关于我</h3>
+            <p class="intro-text">
+                一名初三在校学生，性格内敛不善言谈。习惯独处，沉浸在自己的世界里，不喜喧闹的人群。
+            </p>
+            <p class="intro-text">
+                向往远方与未知的事物，也曾心怀期许，纵使现实常有落差，依旧保持平和的心态面对日常。
+            </p>
+
+            <!-- 兴趣爱好 -->
+            <h3 class="intro-title">兴趣爱好</h3>
+            <div class="tag-wrap">
+                <span class="tag">游戏</span>
+                <span class="tag">动漫</span>
+                <span class="tag">音乐</span>
+            </div>
+
+            <!-- 座右铭 -->
+            <h3 class="intro-title">座右铭</h3>
+            <div class="msg-box">
+                <p class="msg-text">
+                    少上网 多享受生活 生活远比游戏更有趣
+                </p>
+            </div>
+
+            <!-- 底部 -->
+            <div class="footer">
+                <p>© 2026 cute-Fish</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
