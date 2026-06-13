@@ -2,173 +2,245 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cute-Fish | blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>cute-Fish | Blog</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
+            font-family: system-ui, "Microsoft Yahei", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
         }
 
         body {
             min-height: 100vh;
-            background: url("bg.jpg") no-repeat center center;
+            background: url("bg.jpg") no-repeat center center fixed;
             background-size: cover;
-            background-attachment: fixed;
-            color: #e8e8e8;
+            color: #eef2ff;
         }
 
         .mask {
             width: 100%;
             min-height: 100vh;
-            background-color: rgba(10, 12, 20, 0.55);
+            background-color: rgba(10, 12, 20, 0.58);
             padding: 40px 20px;
         }
 
         .blog-container {
-            max-width: 800px;
+            max-width: 880px;
             margin: 0 auto;
-            background: rgba(30, 35, 50, 0.3);
-            /* 浅毛玻璃 */
-            backdrop-filter: blur(6px);
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid rgba(180, 190, 220, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 5, 20, 0.35);
-            animation: fadeIn 1s ease;
+            background: rgba(28, 32, 46, 0.35);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 44px 40px;
+            border: 1px solid rgba(180, 190, 220, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .avatar-box {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .avatar {
-            width: 160px;
-            height: 160px;
+            width: 152px;
+            height: 152px;
             border-radius: 50%;
-            border: 3px solid rgba(170, 185, 210, 0.5);
-            box-shadow: 0 0 18px rgba(120, 140, 180, 0.3);
+            border: 3px solid rgba(200, 210, 240, 0.5);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
             object-fit: cover;
-            transition: all 0.4s ease;
+            transition: all 0.35s ease;
         }
 
         .avatar:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 28px rgba(120, 140, 180, 0.5);
+            transform: scale(1.02);
+            box-shadow: 0 0 26px rgba(150, 170, 210, 0.45);
+            border-color: rgba(220, 230, 255, 0.7);
         }
 
         .nickname {
-            font-size: 28px;
+            font-size: 30px;
             margin-top: 18px;
-            color: #d0d8e8;
-            letter-spacing: 3px;
+            color: #eef3ff;
+            letter-spacing: 2px;
             font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         .sign {
             font-size: 14px;
-            color: #a8b2cc;
+            color: #bac2dd;
             margin-top: 8px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .divider {
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(160, 175, 200, 0.35), transparent);
-            margin: 35px 0;
+            background: linear-gradient(to right, transparent, rgba(170, 185, 215, 0.45), transparent);
+            margin: 32px 0;
         }
 
         .intro-title {
             font-size: 22px;
-            color: #c5cfe2;
-            margin: 30px 0 16px;
-            border-left: 3px solid rgba(130, 150, 190, 0.6);
-            padding-left: 12px;
-            letter-spacing: 2px;
+            color: #e0e8fc;
+            margin: 32px 0 18px;
+            border-left: 3px solid rgba(140, 165, 205, 0.8);
+            padding-left: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         .intro-text {
-            line-height: 1.9;
+            line-height: 1.85;
             font-size: 16px;
-            color: #dcdfe8;
+            color: #e3e9f5;
             text-indent: 2em;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .tag-wrap {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
-            margin: 18px 0 22px;
+            margin: 20px 0 10px;
         }
 
         .tag {
-            padding: 7px 16px;
-            background: rgba(60, 70, 95, 0.3);
-            border: 1px solid rgba(140, 155, 185, 0.3);
-            border-radius: 4px;
+            padding: 6px 18px;
+            background: rgba(60, 72, 100, 0.4);
+            border: 1px solid rgba(140, 158, 190, 0.4);
+            border-radius: 30px;
             font-size: 14px;
-            color: #c8d2e5;
-            transition: 0.3s;
-            letter-spacing: 1px;
+            color: #e0e7f5;
+            transition: all 0.25s;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(2px);
         }
 
         .tag:hover {
-            background: rgba(75, 88, 115, 0.45);
+            background: rgba(85, 100, 135, 0.5);
+            border-color: rgba(180, 195, 225, 0.6);
         }
 
         .msg-box {
-            background: rgba(40, 48, 68, 0.25);
-            border-radius: 6px;
-            padding: 22px;
-            margin: 22px 0;
-            border: 1px solid rgba(150, 165, 195, 0.25);
+            background: rgba(35, 42, 62, 0.45);
+            border-radius: 20px;
+            padding: 22px 28px;
+            margin: 24px 0 20px;
+            border: 1px solid rgba(150, 168, 200, 0.3);
+            backdrop-filter: blur(2px);
         }
 
         .msg-text {
-            line-height: 1.9;
+            line-height: 1.85;
             font-size: 15px;
-            color: #cdd6e6;
+            color: #eef2fe;
             text-align: center;
             letter-spacing: 1px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        /* 我的网站 板块样式 - 干净无emoji */
+        .site-section {
+            margin: 30px 0 22px;
+        }
+
+        .site-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 22px;
+            margin-top: 14px;
+        }
+
+        .site-card {
+            background: rgba(40, 48, 70, 0.45);
+            border-radius: 20px;
+            padding: 18px 20px;
+            border: 1px solid rgba(150, 170, 200, 0.3);
+            transition: transform 0.25s ease, background 0.25s, box-shadow 0.2s;
+            backdrop-filter: blur(2px);
+        }
+
+        .site-card:hover {
+            background: rgba(58, 68, 94, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(180, 198, 230, 0.5);
+        }
+
+        .site-card a {
+            font-size: 19px;
+            font-weight: 500;
+            color: #eef3ff;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px dotted rgba(200, 215, 245, 0.5);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .site-card a:hover {
+            color: white;
+            border-bottom-color: #bdd0f0;
+        }
+
+        .site-card p {
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: #cbd5ec;
+            margin: 0;
+            word-break: break-word;
         }
 
         .footer {
             text-align: center;
-            margin-top: 45px;
-            font-size: 14px;
-            color: #99a4bc;
-            padding-top: 20px;
-            border-top: 1px solid rgba(150, 165, 195, 0.2);
+            margin-top: 52px;
+            font-size: 13px;
+            color: #a5b1cf;
+            padding-top: 24px;
+            border-top: 1px solid rgba(150, 165, 195, 0.25);
             letter-spacing: 1px;
         }
 
         .footer p + p {
-            margin-top: 8px;
-            font-size: 13px;
+            margin-top: 6px;
+            font-size: 12px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
             .blog-container {
-                padding: 25px;
+                padding: 28px 22px;
             }
             .avatar {
-                width: 120px;
-                height: 120px;
+                width: 115px;
+                height: 115px;
             }
             .nickname {
-                font-size: 24px;
+                font-size: 26px;
             }
             .intro-title {
                 font-size: 20px;
+            }
+            .site-grid {
+                gap: 16px;
+                grid-template-columns: 1fr;
+            }
+            .site-card {
+                padding: 16px;
             }
         }
     </style>
@@ -178,7 +250,7 @@
         <div class="blog-container">
             <!-- 头像 & 昵称 & 签名 -->
             <div class="avatar-box">
-                <img src="avatar.jpg" alt="头像" class="avatar">
+                <img src="avatar.jpg" alt="avatar" class="avatar">
                 <h2 class="nickname">cute-Fish</h2>
                 <p class="sign">人间过客，自在而行</p>
             </div>
@@ -210,9 +282,39 @@
                 </p>
             </div>
 
+            <!-- 我的网站 板块 -->
+            <div class="site-section">
+                <h3 class="intro-title">我的网站</h3>
+                <div class="site-grid">
+                    <!-- 卡片 1 -->
+                    <div class="site-card">
+                        <a href="https://github.com/cuteFishovo" target="_blank" rel="noopener">我的GitHub</a>
+                        <p>爱写一些小东西</p>
+                    </div>
+                    <!-- 卡片 2 -->
+                    <div class="site-card">
+                        <a href="https://space.bilibili.com/1071531206" target="_blank" rel="noopener">我的BiliBili</a>
+                        <p>分享一些教程和经验</p>
+                    </div>
+                    <!-- 卡片 3 -->
+                    <div class="site-card">
+                        <a href="https://ifdian.net/a/cuteFishovo" target="_blank" rel="noopener">我的爱发电</a>
+                        <p>支持我的创作</p>
+                    </div>
+                    <div class="site-card">
+                        <a href="https://www.pc-tool.cn/" target="_blank" rel="noopener">工具箱</a>
+                        <p>一些在线工具</p>
+                    </div>
+                    <div class="site-card">
+                        <a href="https://www.pc-tool.cn/agent/" target="_blank" rel="noopener">SakuraNest</a>
+                        <p>网站代理 文件传输 直链获取</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- 底部 -->
             <div class="footer">
-                <p>© 2026 cute-Fish</p>
+                <p>© 2026 cute-Fish blog.pc-tool.cn</p>
             </div>
         </div>
     </div>
