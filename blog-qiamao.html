@@ -172,6 +172,8 @@
         }
 
         .site-card {
+            position: relative;
+            cursor: pointer;
             background: rgba(45, 38, 40, 0.30);
             border-radius: 20px;
             padding: 18px 20px;
@@ -188,6 +190,7 @@
         }
 
         .site-card a {
+            position: static;
             font-size: 19px;
             font-weight: 500;
             color: #efe8ea;
@@ -197,6 +200,13 @@
             letter-spacing: 0.5px;
             border-bottom: 1px dotted rgba(210, 185, 195, 0.38);
             transition: color 0.2s, border-color 0.2s;
+        }
+
+        .site-card a::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
         }
 
         .site-card a:hover {
@@ -300,10 +310,6 @@
                     <div class="site-card">
                         <a href="https://space.bilibili.com/651371142" target="_blank" rel="noopener">我的BiliBili</a>
                         <p>分享一些教程和经验</p>
-                    </div>
-                    <div class="site-card">
-                        <a href="https://www.pc-tool.cn/" target="_blank" rel="noopener">工具箱</a>
-                        <p>一些在线工具</p>
                     </div>
                     <div class="site-card">
                         <a href="tencent://message/?uin=1348179575&Site=&Menu=yes" rel="noopener">联系QQ</a>

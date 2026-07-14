@@ -172,6 +172,8 @@
         }
 
         .site-card {
+            position: relative;
+            cursor: pointer;
             background: rgba(40, 48, 70, 0.45);
             border-radius: 20px;
             padding: 18px 20px;
@@ -188,6 +190,7 @@
         }
 
         .site-card a {
+            position: static;
             font-size: 19px;
             font-weight: 500;
             color: #eef3ff;
@@ -197,6 +200,13 @@
             letter-spacing: 0.5px;
             border-bottom: 1px dotted rgba(200, 215, 245, 0.5);
             transition: color 0.2s, border-color 0.2s;
+        }
+
+        .site-card a::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
         }
 
         .site-card a:hover {
